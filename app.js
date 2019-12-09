@@ -44,6 +44,8 @@ app.use(flash());
 app.use("/", transactionRoutes);
 
 
-app.listen(3000, () => {
-	console.log('server listening on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
+
