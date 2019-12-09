@@ -23,7 +23,17 @@ var express     = require("express"),
 var transactionRoutes    = require("./routes/transaction")
 
 //mongoose.connect("mongodb://localhost/checker");
-mongoose.connect("mogodb+srv://jan:arweave@cluster0-pdknn.mongodb.net/test?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://jan:arweave@cluster0-pdknn.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log('Connected to DB!');
+}).catch(err => {
+	console.log('ERROR:', err.message);
+});
+
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
