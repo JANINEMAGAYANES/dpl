@@ -22,7 +22,8 @@ var express     = require("express"),
 //REQUIRE ROUTES
 var transactionRoutes    = require("./routes/transaction")
 
-mongoose.connect("mongodb://localhost/checker");
+//mongoose.connect("mongodb://localhost/checker");
+mongoose.connect("mongodb+srv://janineaira:<Onedirection143>@cluster0-pdknn.mongodb.net/test?retryWrites=true&w=majority");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
