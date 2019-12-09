@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+<div class="container"> 
+<div class="form-group-row">
+<h1 style="text-align: center; margin: 30px;">Create an Entry</h1>
+<% if(message) {%>  
+<h5 style="text-align: center; margin: 30px;"><%=message%></h5>
+    <% }%> 
+<div style="width: 30%; margin: 25px auto;">
+<form action="/" method="POST">
+    <div class="form-group">
+        Add Link:
+</div>
+<div class="form-group">
+                <input class="form-control" type="text" name="link" placeholder="" size="43" required>
+</div>
+<div class="form-group">
+        <button class="button">Submit</button>
+        </div>
+        </form>
+        </div>
+</div>
+</div>
+</div>
+
+<% include ../partials/footer %> 
